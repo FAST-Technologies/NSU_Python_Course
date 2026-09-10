@@ -8,14 +8,14 @@ Then comment the example again before trying another one.
 """
 
 
-print("Error examples are currently commented out.")
+# print("Error examples are currently commented out.")
 
 
 # ============================================================
 # SyntaxError
 # ============================================================
 
-# print("Hello"
+# print("Hello")
 
 
 # ============================================================
@@ -51,13 +51,13 @@ print("Error examples are currently commented out.")
 # IndexError
 # ============================================================
 
-# numbers = [10, 20]
-# print(numbers[5])
+#numbers = [10, 20]
+#print(numbers[0])
 
 
 # ============================================================
 # KeyError
 # ============================================================
 
-# student = {"name": "Anna"}
-# print(student["age"])
+student = {"name": "Anna"}
+print(student["age"])

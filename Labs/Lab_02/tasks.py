@@ -24,7 +24,7 @@ Do not use:
 """
 # pylint: disable=invalid-name
 
-from typing import List, Dict, TypedDict, Any
+from typing import List, Dict, Tuple, TypedDict, Any
 
 # ============================================================
 # Task 1 — Built-in Functions
@@ -456,5 +456,324 @@ print(f"'Python' in text: {'Python' in text_membership}")
 print(f"'Java' not in text: {'Java' not in text_membership}")
 print(f"'age' in student: {'age' in student_dict}")
 print(f"'email' in student: {'email' in student_dict}")
+
+print()
+
+# ============================================================
+# Task 17 — Time Decomposition
+# ============================================================
+
+print("Task 17 — Time Decomposition")
+
+# Ask the user to enter a duration in seconds.
+#
+# Example:
+# 9374
+#
+# Convert it into:
+# hours
+# minutes
+# seconds
+#
+# Expected:
+# 9374 seconds = 2 hour(s), 36 minute(s), 14 second(s)
+#
+# Use only:
+# int()
+# //
+# %
+# arithmetic
+# f-strings
+
+# Read total_seconds from the user.
+
+total_seconds: int = int(input("Enter duration in seconds: "))
+
+# Calculate all four values.
+hours: int = total_seconds // 3660
+remaining_seconds: int = total_seconds % 3600
+minutes: int = remaining_seconds // 60
+seconds: int = remaining_seconds % 60
+
+# Print the formatted result.
+print(f"{total_seconds} seconds = {hours} hour(s), {minutes} minute(s), {seconds} second(s)")
+
+print()
+
+
+# ============================================================
+# Task 18 — Order Invoice
+# ============================================================
+
+print("Task 18 — Order Invoice")
+
+# A customer buys three different products.
+#
+# Ask for:
+# product 1 price and quantity
+# product 2 price and quantity
+# product 3 price and quantity
+#
+# Calculate:
+# subtotal for every product
+# total before tax
+# tax = 5%
+# final total
+#
+# Example output:
+#
+# Product 1: 1200.00
+# Product 2: 750.00
+# Product 3: 400.00
+# --------------------
+# Subtotal: 2350.00
+# Tax: 117.50
+# Total: 2467.50
+#
+# Do not use if, loops, or functions.
+
+# Read all six values.
+price_1: float = float(input("Enter first product price: "))
+quantity_1: int = int(input("Enter first product ammount: "))
+
+price_2: float = float(input("Enter second product price: "))
+quantity_2: int = int(input("Enter second product ammount: "))
+
+price_3: float = float(input("Enter third product price: "))
+quantity_3: int = int(input("Enter third product ammount: "))
+
+# Perform the calculations.
+product_1_total: float = price_1 * quantity_1
+product_2_total: float = price_2 * quantity_2
+product_3_total: float = price_3 * quantity_3
+
+subtotal: float = product_1_total + product_2_total + product_3_total
+tax: float = subtotal * 0.05
+final_total: float = subtotal + tax
+
+# Print a clean invoice using f-strings.
+print(f"Product 1: {product_1_total:.2f}")
+print(f"Product 2: {product_2_total:.2f}")
+print(f"Product 3: {product_3_total:.2f}")
+print("-" * 20)
+print(f"Subtotal: {subtotal:.2f}")
+print(f"Tax: {tax:.2f}")
+print(f"Total: {final_total:.2f}")
+
+print()
+
+
+# ============================================================
+# Task 19 — Coordinate Analysis
+# ============================================================
+
+print("Task 19 — Coordinate Analysis")
+
+# Ask the user for two points:
+#
+# (x1, y1)
+# (x2, y2)
+#
+# Store each point as a tuple.
+#
+# Calculate:
+#
+# difference in x
+# difference in y
+# squared distance
+# distance
+#
+# Formula:
+#
+# distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+#
+# Print both points and the calculated distance.
+
+# Read the four coordinates.
+x1 = float(input("Enter x1: "))
+y1 = float(input("Enter y1: "))
+x2 = float(input("Enter x2: "))
+y2 = float(input("Enter y2: "))
+
+# Create the two tuples.
+point_1: Tuple[float, float] = (x1, y1)
+point_2: Tuple[float, float] = (x2, y2)
+
+# Perform the calculations.
+delta_x: float = x2 - x1
+delta_y: float = y2 - y1
+distance_squared: float = (delta_x ** 2) + (delta_y ** 2)
+distance: float = distance_squared ** 0.5
+
+# Print the result with two decimal places.
+print(f"Point 1: {point_1}")
+print(f"Point 2: {point_2}")
+print(f"Distance: {distance:.2f}")
+
+print()
+
+
+# ============================================================
+# Task 20 — Working with Complex Numbers
+# ============================================================
+
+print("Task 20 — Complex Numbers")
+
+# Section 2 includes Python's basic data types.
+# One numerical type that is easy to forget is complex.
+#
+# Given:
+
+z1: complex = 3 + 4j
+z2: complex = 2 - 1j
+
+# Print:
+#
+# z1
+# z2
+# type(z1)
+# z1 + z2
+# z1 - z2
+# z1 * z2
+# z1 / z2
+#
+# Also print:
+#
+# z1.real
+# z1.imag
+#
+# Predict the type of each arithmetic result before running it.
+print(f"z1: {z1}")
+print(f"z2: {z2}")
+print(f"type(z1): {type(z1)}")
+print(f"z1 + z2: {z1 + z2}")
+print(f"z1 - z2: {z1 - z2}")
+print(f"z1 * z2: {z1 * z2}")
+print(f"z1 / z2: {z1 / z2}")
+print(f"z1.real: {z1.real}")
+print(f"z1.imag: {z1.imag}")
+
+print()
+
+
+# ============================================================
+# Task 21 — Student Data Record
+# ============================================================
+
+print("Task 21 — Student Data Record")
+
+# Ask the user for:
+#
+# name
+# age
+# university
+# first score
+# second score
+# third score
+#
+# Store the scores in a list.
+#
+# Store all student information in a dictionary:
+#
+# {
+#     "name": ...,
+#     "age": ...,
+#     "university": ...,
+#     "scores": [...]
+# }
+#
+# Then calculate:
+#
+# number of scores
+# minimum score
+# maximum score
+# mean score
+#
+# Print a formatted student report.
+#
+# Do not use loops.
+
+# Read the values.
+
+# Create scores.
+
+# Create student.
+
+student_name: str = input("Enter student name: ")
+student_age: int = int(input("Enter student age: "))
+university: str = input("Enter student's university: ")
+
+score_1: float = float(input("Enter first score: "))
+score_2: float = float(input("Enter second score: "))
+score_3: float = float(input("Enter third score: "))
+
+scores: List[float] = [score_1, score_2, score_3]
+student: Dict[str, str | int | List[float]] = {
+    "name": student_name,
+    "age": student_age,
+    "university": university,
+    "scores": scores
+}
+
+# Calculate the statistics.
+score_count: int = len(student["scores"])
+minimum_score: float = min(student["scores"])
+maximum_score: float = max(student["scores"])
+mean_score: float = sum(student["scores"]) / score_count
+
+# Print a clean report.
+print(f"\n--- Student Report ---")
+print(f"Name: {student['name']}")
+print(f"Age: {student['age']}")
+print(f"University: {student['university']}")
+print(f"Scores: {student['scores']}")
+print(f"Number of scores: {score_count}")
+print(f"Minimum score: {minimum_score:.2f}")
+print(f"Maximum score: {maximum_score:.2f}")
+print(f"Mean score: {mean_score:.2f}")
+
+print()
+
+
+# ============================================================
+# Task 22 — Debug the Program
+# ============================================================
+
+print("Task 22 — Debug the Program")
+
+# The program below is supposed to calculate the average
+# of three scores entered by the user.
+#
+# It currently contains several problems.
+#
+# Find and fix them.
+#
+# Do NOT use if, try-except, loops, or functions.
+#
+# Think about:
+# - input() types
+# - variable names
+# - arithmetic
+# - operator precedence
+# - PEP 8
+# - formatted output
+
+
+# score1=input("Score 1: ")
+# Score2=input("Score 2: ")
+# score3=input("Score 3: ")
+# total=score1+Score2+score3
+# average=total/3
+# print("Average:"+average)
+
+# Rewrite the program correctly below.
+score_1: float = float(input("Score 1: "))
+score_2: float = float(input("Score 2: "))
+score_3: float = float(input("Score 3: "))
+
+total_score: float = score_1 + score_2 + score_3
+average_score: float = total_score / 3
+
+print(f"Average: {average_score:.2f}")
 
 print()
