@@ -321,12 +321,12 @@ print(f"Student's age: {student['age']}")
 # TODO:
 # Check whether "age" exists in the dictionary.
 # Print the result.
-print(f"Student's age existance: {"age" in student}")
+print(f"Student's age existance: {'age' in student}")
 
 # TODO:
 # Check whether "email" exists in the dictionary.
 # Print the result.
-print(f"Student's email existance: {"email" in student}")
+print(f"Student's email existance: {'email' in student}")
 
 numbers: List[int] = [10, 20, 30, 40]
 
