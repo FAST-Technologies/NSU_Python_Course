@@ -312,11 +312,11 @@ student: Dict[str, Any] = {
 
 # TODO:
 # Print the student's name.
-print(f"Student's name: {student["name"]}")
+print(f"Student's name: {student['name']}")
 
 # TODO:
 # Print the student's age.
-print(f"Student's age: {student["age"]}")
+print(f"Student's age: {student['age']}")
 
 # TODO:
 # Check whether "age" exists in the dictionary.
