@@ -722,7 +722,7 @@ maximum_score: float = max(student["scores"])
 mean_score: float = sum(student["scores"]) / score_count
 
 # Print a clean report.
-print(f"\n--- Student Report ---")
+print("\n--- Student Report ---")
 print(f"Name: {student['name']}")
 print(f"Age: {student['age']}")
 print(f"University: {student['university']}")
