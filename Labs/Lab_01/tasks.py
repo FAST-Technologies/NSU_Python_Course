@@ -12,7 +12,7 @@ Topics:
 - arithmetic operators
 - basic PEP 8
 """
-
+import math
 from typing import List, Dict, Tuple, Set, Any
 
 # ============================================================
@@ -21,16 +21,16 @@ from typing import List, Dict, Tuple, Set, Any
 
 print("Task 1 — Personal Information")
 
-# TODO:
+ 
 # Ask the user to enter their name.
 name: str = input("Enter your name: ")
 
-# TODO:
+ 
 # Ask the user to enter their age.
 # Remember that input() returns a string.
 age: int = int(input("Enter your age: "))
 
-# TODO:
+ 
 # Print:
 # Hello, <name>!
 # Next year you will be <age + 1> years old.
@@ -45,20 +45,20 @@ print()
 
 print("Task 2 — Rectangle")
 
-# TODO:
+ 
 # Ask the user to enter width and height.
 width: float = float(input("Enter the width of the rectangle: "))
 height: float = float(input("Enter the height of the rectangle: "))
 
-# TODO:
+ 
 # Calculate the area.
 area: float = width * height
 
-# TODO:
+ 
 # Calculate the perimeter.
 perimeter: float = 2 *  width + 2 * height
 
-# TODO:
+ 
 # Print the results.
 print(f"Area: {area}")
 print(f"Perimeter: {perimeter}")
@@ -75,15 +75,15 @@ print("Task 3 — Temperature Converter")
 # Formula:
 # Fahrenheit = Celsius * 9 / 5 + 32
 
-# TODO:
+ 
 # Read Celsius temperature.
 celsius: float = float(input("Enter temperature in Celsius: "))
 
-# TODO:
+ 
 # Calculate Fahrenheit temperature.
 fahrenheit: float = (9.0 * celsius) / 5.0 + 32.0
 
-# TODO:
+ 
 # Print the result.
 print(f"{celsius}°C is equal to {fahrenheit}°F")
 
@@ -96,23 +96,23 @@ print()
 
 print("Task 4 — Purchase Calculator")
 
-# TODO:
+ 
 # Ask for the number of items.
 quantity: int = int(input("Enter the number of items: "))
 
-# TODO:
+ 
 # Ask for the price of one item.
 price: float = float(input("Enter the price of one item: "))
 
-# TODO:
+ 
 # Calculate the total price.
 total_price: float = quantity * price
 
-# TODO:
+ 
 # Apply a 10% discount.
 discounted_price: float = total_price * 0.90
 
-# TODO:
+ 
 # Print both results.
 print(f"Total price: {total_price}")
 print(f"Discounted price (10% off): {discounted_price:.3f}")
@@ -129,7 +129,7 @@ print("Task 5 — Arithmetic Operators")
 a: int = 17
 b: int = 5
 
-# TODO:
+ 
 # Print the result of each operation:
 #
 # a + b
@@ -160,7 +160,7 @@ complex_value = 2 + 3j
 text_value: str = "Python"
 boolean_value: bool = True
 
-# TODO:
+ 
 # Use type() to print the type of every variable above.
 #
 # Example:
@@ -183,7 +183,7 @@ print("Task 7 — Comparisons and Boolean Logic")
 age: int = 22
 is_master_student: bool = True
 
-# TODO:
+ 
 # Print the result of the following expressions:
 #
 # age >= 18
@@ -213,7 +213,7 @@ print()
 
 print("Task 8 — Python Collections")
 
-# TODO:
+ 
 # Create:
 #
 # 1. A list containing three programming languages.
@@ -233,14 +233,14 @@ student: Dict[str, Any] = {
     "university": "Novosibirsk State University (NSU)",
 }
 
-# TODO:
+ 
 # Print all four variables.
 print(f"Printing List: {programming_languages}")
 print(f"Printing Tuple: {numbers}")
 print(f"Printing set: {cities}")
 print(f"Printing Dict: {student}")
 #
-# TODO:
+ 
 # Use type() to print the type of each collection.
 print(f"Printing type of List: {type(programming_languages)}")
 print(f"Printing type of Tuple: {type(numbers)}")
@@ -258,22 +258,22 @@ print("Task 9 — Indexing and Slicing")
 
 numbers: List[int] = [0, 1, 2, 3, 4, 5, 6, 7]
 
-# TODO:
+ 
 # Print the first element.
 print(f"The first elem of List: {numbers[0]}")
 
-# TODO:
+ 
 # Print the last element.
 print(f"The last elem of List: {numbers[-1]}")
 
-# TODO:
+ 
 # Print elements from index 1 up to index 4.
 #
 # Expected:
 # [1, 2, 3]
 print(f"Elements from index 1 up to index 4: {numbers[1:4]}")
 
-# TODO:
+ 
 # Print every second element.
 #
 # Expected:
@@ -282,15 +282,15 @@ print(f"Every second element of List: {numbers[0:8:2]}")
 
 word: str = "Python"
 
-# TODO:
+ 
 # Print the first character.
 print(f"The first character of String: {word[0]}")
 
-# TODO:
+ 
 # Print the last character.
 print(f"The last character of String: {word[-1]}")
 
-# TODO:
+ 
 # Print:
 # Pyt
 print(word[:3])
@@ -310,31 +310,31 @@ student: Dict[str, Any] = {
     "city": "Novosibirsk",
 }
 
-# TODO:
+ 
 # Print the student's name.
 print(f"Student's name: {student['name']}")
 
-# TODO:
+ 
 # Print the student's age.
 print(f"Student's age: {student['age']}")
 
-# TODO:
+ 
 # Check whether "age" exists in the dictionary.
 # Print the result.
 print(f"Student's age existance: {'age' in student}")
 
-# TODO:
+ 
 # Check whether "email" exists in the dictionary.
 # Print the result.
 print(f"Student's email existance: {'email' in student}")
 
 numbers: List[int] = [10, 20, 30, 40]
 
-# TODO:
+ 
 # Check whether 20 is in numbers.
 print(f"20 existance in the List: {20 in numbers}")
 
-# TODO:
+ 
 # Check whether 50 is in numbers.
 print(f"50 existance in the List: {50 in numbers}")
 
@@ -347,9 +347,7 @@ print()
 # ============================================================
 
 print("Task 11 — Formatted Output")
-import math
-
-# TODO:
+ 
 # Ask the user to enter the radius of a circle.
 
 radius: float = float(input("Enter the radius of a circle: "))
@@ -361,7 +359,7 @@ area: float = math.pi * radius ** 2
 
 # The second variant is just area: float = 3.14159 * radius ** 2
 
-# TODO:
+ 
 # Print the radius and area using an f-string.
 #
 # Example:
@@ -387,7 +385,7 @@ print("Task 12 — Trip Cost Calculator")
 # A car consumes a certain number of liters of fuel
 # for every 100 kilometers.
 
-# TODO:
+ 
 # Ask the user to enter:
 #
 # distance in kilometers
@@ -398,7 +396,7 @@ distance: float = float(input("Enter the distance in kilometers: "))
 fuel_consumption: float = float(input("Enter the fuel consumption in liters per 100 km: "))
 fuel_price: float = float(input("Enter the fuel price per liter: "))
 
-# TODO:
+ 
 # Calculate how many liters of fuel are required.
 #
 # Formula:
@@ -406,12 +404,12 @@ fuel_price: float = float(input("Enter the fuel price per liter: "))
 
 liters_needed: float = (distance / 100) * fuel_consumption
 
-# TODO:
+ 
 # Calculate the total cost of the trip.
 
 trip_cost: float = liters_needed * fuel_price
 
-# TODO:
+ 
 # Print something similar to:
 #
 # Distance: 450.0 km
