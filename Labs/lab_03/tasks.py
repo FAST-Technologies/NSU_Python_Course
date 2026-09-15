@@ -9,448 +9,448 @@ Use only concepts covered in Lecture 03.
 """
 from typing import List, Dict
 
-# # ============================================================
-# # Task 1 — Positive, negative, or zero
-# # ============================================================
-# # Ask the user to enter an integer.
-# # Print exactly one of:
-# #   Positive
-# #   Negative
-# #   Zero
-# #
-# # Example:
-# # Input: -7
-# # Output: Negative
+# ============================================================
+# Task 1 — Positive, negative, or zero
+# ============================================================
+# Ask the user to enter an integer.
+# Print exactly one of:
+#   Positive
+#   Negative
+#   Zero
+#
+# Example:
+# Input: -7
+# Output: Negative
 
-# # Write your code below:
-# print("Task 1 — Positive, negative, or zero")
+# Write your code below:
+print("Task 1 — Positive, negative, or zero")
 
-# num: int = int(input("Enter an integer: "))
+num: int = int(input("Enter an integer: "))
 
-# if num > 0:
-#     print("Positive")
-# elif num < 0:
-#     print("Negative")
-# else:
-#     print("Zero")
+if num > 0:
+    print("Positive")
+elif num < 0:
+    print("Negative")
+else:
+    print("Zero")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 2 — Age category
-# # ============================================================
-# # Ask the user for their age.
-# #
-# # Print:
-# #   Child      -> age < 13
-# #   Teenager   -> 13–17
-# #   Adult      -> 18–64
-# #   Senior     -> 65 or older
-# #
-# # Test boundary values: 12, 13, 17, 18, 64, 65.
+# ============================================================
+# Task 2 — Age category
+# ============================================================
+# Ask the user for their age.
+#
+# Print:
+#   Child      -> age < 13
+#   Teenager   -> 13–17
+#   Adult      -> 18–64
+#   Senior     -> 65 or older
+#
+# Test boundary values: 12, 13, 17, 18, 64, 65.
 
-# # Write your code below:
-# print("Task 2 — Age category")
+# Write your code below:
+print("Task 2 — Age category")
 
-# age: int = int(input("Enter your age: "))
+age: int = int(input("Enter your age: "))
 
-# if age < 13:
-#     print("Child")
-# elif 13 <= age <= 17:
-#     print("Teenager")
-# elif 18 <= age <= 64:
-#     print("Adult")
-# else:
-#     print("Senior")
+if age < 13:
+    print("Child")
+elif 13 <= age <= 17:
+    print("Teenager")
+elif 18 <= age <= 64:
+    print("Adult")
+else:
+    print("Senior")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 3 — Grade classifier
-# # ============================================================
-# # Ask the user for a score.
-# #
-# # First check whether the score is between 0 and 100 inclusive.
-# #
-# # For a valid score:
-# #   A    -> 90–100
-# #   B    -> 75–89
-# #   C    -> 60–74
-# #   Fail -> below 60
-# #
-# # For an invalid score print:
-# #   Invalid score
+# ============================================================
+# Task 3 — Grade classifier
+# ============================================================
+# Ask the user for a score.
+#
+# First check whether the score is between 0 and 100 inclusive.
+#
+# For a valid score:
+#   A    -> 90–100
+#   B    -> 75–89
+#   C    -> 60–74
+#   Fail -> below 60
+#
+# For an invalid score print:
+#   Invalid score
 
-# # Write your code below:
-# print("Task 3 — Grade classifier")
+# Write your code below:
+print("Task 3 — Grade classifier")
 
-# score: float = float(input("Enter a score: "))
+score: float = float(input("Enter a score: "))
 
-# if 0 <= score <= 100:
-#     if score >= 90:
-#         print("A")
-#     elif score >= 75:
-#         print("B")
-#     elif score >= 60:
-#         print("C")
-#     else:
-#         print("Fail")
-# else:
-#     print("Invalid score")
+if 0 <= score <= 100:
+    if score >= 90:
+        print("A")
+    elif score >= 75:
+        print("B")
+    elif score >= 60:
+        print("C")
+    else:
+        print("Fail")
+else:
+    print("Invalid score")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 4 — Access decision
-# # ============================================================
-# # Ask the user for:
-# #   age
-# #   whether they have a ticket: yes/no
-# #
-# # A person may enter only if:
-# #   age >= 18 AND they have a ticket.
-# #
-# # Print one of:
-# #   Access granted
-# #   Ticket required
-# #   Must be 18 or older
+# ============================================================
+# Task 4 — Access decision
+# ============================================================
+# Ask the user for:
+#   age
+#   whether they have a ticket: yes/no
+#
+# A person may enter only if:
+#   age >= 18 AND they have a ticket.
+#
+# Print one of:
+#   Access granted
+#   Ticket required
+#   Must be 18 or older
 
-# # Write your code below:
-# print("Task 4 — Access decision")
+# Write your code below:
+print("Task 4 — Access decision")
 
-# user_age: int = int(input("Enter your age: "))
-# has_ticket: str = input("Do you have a ticket? (yes/no): ").strip().lower()
+user_age: int = int(input("Enter your age: "))
+has_ticket: str = input("Do you have a ticket? (yes/no): ").strip().lower()
 
-# if user_age < 18:
-#     print("Must be 18 or older")
-# elif has_ticket == "yes":
-#     print("Access granted")
-# else:
-#     print("Ticket required")
+if user_age < 18:
+    print("Must be 18 or older")
+elif has_ticket == "yes":
+    print("Access granted")
+else:
+    print("Ticket required")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 5 — Even numbers with range()
-# # ============================================================
-# # Print all even numbers from 2 through 30.
-# #
-# # Required:
-# # Use range(start, stop, step).
+# ============================================================
+# Task 5 — Even numbers with range()
+# ============================================================
+# Print all even numbers from 2 through 30.
+#
+# Required:
+# Use range(start, stop, step).
 
-# # Write your code below:
-# print("Task 5 — Even numbers with range()")
+# Write your code below:
+print("Task 5 — Even numbers with range()")
 
-# for i in range(2, 31, 2):
-#     print(i)
+for i in range(2, 31, 2):
+    print(i)
 
-# print()
+print()
 
-# # ============================================================
-# # Task 6 — Sum of multiples of 3
-# # ============================================================
-# # Calculate and print the sum of all multiples of 3
-# # from 3 through 99.
-# #
-# # Required:
-# # Use a for loop and an accumulator.
-# #
-# # Expected result:
-# # 1683
+# ============================================================
+# Task 6 — Sum of multiples of 3
+# ============================================================
+# Calculate and print the sum of all multiples of 3
+# from 3 through 99.
+#
+# Required:
+# Use a for loop and an accumulator.
+#
+# Expected result:
+# 1683
 
-# # Write your code below:
-# print("Task 6 — Sum of multiples of 3")
+# Write your code below:
+print("Task 6 — Sum of multiples of 3")
 
-# total_sum: int = 0
-# for i in range(3, 100, 3):
-#     total_sum += i
+total_sum: int = 0
+for i in range(3, 100, 3):
+    total_sum += i
 
-# print(total_sum)
+print(total_sum)
 
-# print()
+print()
 
-# # ============================================================
-# # Task 7 — Count number categories
-# # ============================================================
-# print("Task 7 — Count number categories")
-# numbers: List[int] = [4, -2, 0, 7, -5, 9, 0, -1, 8]
+# ============================================================
+# Task 7 — Count number categories
+# ============================================================
+print("Task 7 — Count number categories")
+numbers: List[int] = [4, -2, 0, 7, -5, 9, 0, -1, 8]
 
-# # Count how many values are:
-# #   positive
-# #   negative
-# #   zero
-# #
-# # Print all three counts.
-# # Do not manually count the values.
+# Count how many values are:
+#   positive
+#   negative
+#   zero
+#
+# Print all three counts.
+# Do not manually count the values.
 
-# # Write your code below:
-# positive_count: int = 0
-# negative_count: int = 0
-# zero_count: int = 0
+# Write your code below:
+positive_count: int = 0
+negative_count: int = 0
+zero_count: int = 0
 
-# for num in numbers:
-#     if num > 0:
-#         positive_count += 1
-#     elif num < 0:
-#         negative_count += 1
-#     else:
-#         zero_count += 1
+for num in numbers:
+    if num > 0:
+        positive_count += 1
+    elif num < 0:
+        negative_count += 1
+    else:
+        zero_count += 1
 
-# print(f"Positive: {positive_count}")
-# print(f"Negative: {negative_count}")
-# print(f"Zero: {zero_count}")
+print(f"Positive: {positive_count}")
+print(f"Negative: {negative_count}")
+print(f"Zero: {zero_count}")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 8 — Count vowels
-# # ============================================================
-# # Ask the user to enter a word or short text.
-# # Count how many vowels it contains.
-# #
-# # Treat uppercase and lowercase equally.
-# # Vowels: a e i o u
-# #
-# # Example:
-# # Input: Artificial Intelligence
-# # Output: 10
-# #
-# # Hint:
-# # Iterate directly over the string.
+# ============================================================
+# Task 8 — Count vowels
+# ============================================================
+# Ask the user to enter a word or short text.
+# Count how many vowels it contains.
+#
+# Treat uppercase and lowercase equally.
+# Vowels: a e i o u
+#
+# Example:
+# Input: Artificial Intelligence
+# Output: 10
+#
+# Hint:
+# Iterate directly over the string.
 
-# # Write your code below:
-# print("Task 8 — Count vowels")
+# Write your code below:
+print("Task 8 — Count vowels")
 
-# text: str = input("Enter a word or short text: ")
-# vowel_count: int = 0
-# vowels: str = "aeiouAEIOU"
+text: str = input("Enter a word or short text: ")
+vowel_count: int = 0
+vowels: str = "aeiouAEIOU"
 
-# for char in text:
-#     if char in vowels:
-#         vowel_count += 1
+for char in text:
+    if char in vowels:
+        vowel_count += 1
 
-# print(vowel_count)
+print(vowel_count)
 
-# print()
+print()
 
-# # ============================================================
-# # Task 9 — Student results
-# # ============================================================
-# print("Task 9 — Student results")
+# ============================================================
+# Task 9 — Student results
+# ============================================================
+print("Task 9 — Student results")
 
-# scores: List[int] = [85, 42, 67, 91, 58, 73, 100, 39]
+scores: List[int] = [85, 42, 67, 91, 58, 73, 100, 39]
 
-# # Count:
-# #   passed students: score >= 60
-# #   failed students: score < 60
-# #
-# # Also print the average score.
-# #
-# # Required:
-# # Use a loop to calculate the total.
-# #
-# # Expected:
-# # Passed: 5
-# # Failed: 3
-# # Average: 69.38
+# Count:
+#   passed students: score >= 60
+#   failed students: score < 60
+#
+# Also print the average score.
+#
+# Required:
+# Use a loop to calculate the total.
+#
+# Expected:
+# Passed: 5
+# Failed: 3
+# Average: 69.38
 
-# # Write your code below:
-# passed_count: int = 0
-# failed_count: int = 0
-# total_score: float = 0.0
+# Write your code below:
+passed_count: int = 0
+failed_count: int = 0
+total_score: float = 0.0
 
-# for s in scores:
-#     total_score += s
-#     if s >= 60:
-#         passed_count += 1
-#     else:
-#         failed_count += 1
+for s in scores:
+    total_score += s
+    if s >= 60:
+        passed_count += 1
+    else:
+        failed_count += 1
 
-# average_score: float = total_score / len(scores)
+average_score: float = total_score / len(scores)
 
-# print(f"Passed: {passed_count}")
-# print(f"Failed: {failed_count}")
-# print(f"Average: {average_score:.2f}")
+print(f"Passed: {passed_count}")
+print(f"Failed: {failed_count}")
+print(f"Average: {average_score:.2f}")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 10 — Search and stop
-# # ============================================================
-# # Ask the user for a name.
-# # Search the list using a for loop.
-# #
-# # If found:
-# #   print "Found"
-# #   stop immediately with break
-# #
-# # If not found:
-# #   print "Not found"
-# #
-# # Do not use:
-# #   if target in names
-# #
-# # Hint:
-# # A Boolean variable such as found = False can help.
+# ============================================================
+# Task 10 — Search and stop
+# ============================================================
+# Ask the user for a name.
+# Search the list using a for loop.
+#
+# If found:
+#   print "Found"
+#   stop immediately with break
+#
+# If not found:
+#   print "Not found"
+#
+# Do not use:
+#   if target in names
+#
+# Hint:
+# A Boolean variable such as found = False can help.
 
-# # Write your code below:
-# print("Task 10 — Search and stop")
+# Write your code below:
+print("Task 10 — Search and stop")
 
-# names: List[str] = ["Anna", "Boris", "Sasha", "Maria", "Oleg", "Dina"]
-# target_name: str = input("Enter a name to search: ")
+names: List[str] = ["Anna", "Boris", "Sasha", "Maria", "Oleg", "Dina"]
+target_name: str = input("Enter a name to search: ")
 
-# found: bool = False
+found: bool = False
 
-# for name in names:
-#     if name == target_name:
-#         found = True
-#         break
+for name in names:
+    if name == target_name:
+        found = True
+        break
 
-# if found:
-#     print("Found")
-# else:
-#     print("Not found")
+if found:
+    print("Found")
+else:
+    print("Not found")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 11 — Skip invalid scores
-# # ============================================================
-# # Valid scores are from 0 to 100 inclusive.
-# #
-# # Use continue to skip invalid scores.
-# # For valid scores:
-# #   print each valid score
-# #   calculate the average of valid scores
-# #
-# # At the end print:
-# #   Valid scores: ...
-# #   Average: ...
-# #
-# # Required:
-# # Use continue.
+# ============================================================
+# Task 11 — Skip invalid scores
+# ============================================================
+# Valid scores are from 0 to 100 inclusive.
+#
+# Use continue to skip invalid scores.
+# For valid scores:
+#   print each valid score
+#   calculate the average of valid scores
+#
+# At the end print:
+#   Valid scores: ...
+#   Average: ...
+#
+# Required:
+# Use continue.
 
-# # Write your code below:
-# print("Task 11 — Skip invalid scores")
+# Write your code below:
+print("Task 11 — Skip invalid scores")
 
-# raw_scores: List[int] = [78, -5, 91, 120, 66, 0, 88, 101, 54]
+raw_scores: List[int] = [78, -5, 91, 120, 66, 0, 88, 101, 54]
 
-# valid_count: int = 0
-# valid_sum: int = 0
+valid_count: int = 0
+valid_sum: int = 0
 
-# for s in raw_scores:
-#     if s < 0 or s > 100:
-#         continue
+for s in raw_scores:
+    if s < 0 or s > 100:
+        continue
     
-#     print(s)
-#     valid_sum += s
-#     valid_count += 1
+    print(s)
+    valid_sum += s
+    valid_count += 1
 
-# average_valid: float = valid_sum / valid_count if valid_count > 0 else 0.0
+average_valid: float = valid_sum / valid_count if valid_count > 0 else 0.0
 
-# print(f"Valid scores: {valid_count}")
-# print(f"Average: {average_valid:.2f}")
+print(f"Valid scores: {valid_count}")
+print(f"Average: {average_valid:.2f}")
 
-# print()
+print()
 
-# # ============================================================
-# # Task 12 — Dictionary iteration
-# # ============================================================
-# print("Task 12 — Dictionary iteration")
-# student_scores: Dict[str, int] = {
-#     "Anna": 92,
-#     "Boris": 58,
-#     "Sasha": 76,
-#     "Maria": 49,
-#     "Oleg": 84,
-# }
+# ============================================================
+# Task 12 — Dictionary iteration
+# ============================================================
+print("Task 12 — Dictionary iteration")
+student_scores: Dict[str, int] = {
+    "Anna": 92,
+    "Boris": 58,
+    "Sasha": 76,
+    "Maria": 49,
+    "Oleg": 84,
+}
 
-# # Iterate using .items().
-# #
-# # Print:
-# #   Anna: Pass
-# #   Boris: Fail
-# #   ...
-# #
-# # Score >= 60 means Pass.
-# # Then print how many students passed.
+# Iterate using .items().
+#
+# Print:
+#   Anna: Pass
+#   Boris: Fail
+#   ...
+#
+# Score >= 60 means Pass.
+# Then print how many students passed.
 
-# # Write your code below:
-# passed_students: int = 0
+# Write your code below:
+passed_students: int = 0
 
-# for name, score in student_scores.items():
-#     if score >= 60:
-#         print(f"{name}: Pass")
-#         passed_students += 1
-#     else:
-#         print(f"{name}: Fail")
+for name, score in student_scores.items():
+    if score >= 60:
+        print(f"{name}: Pass")
+        passed_students += 1
+    else:
+        print(f"{name}: Fail")
 
-# print(f"Total passed: {passed_students}")
+print(f"Total passed: {passed_students}")
 
-# print()
+print()
 
-# # ============================================================
-# # BONUS Task 13 — FizzBuzz
-# # ============================================================
-# # Print numbers 1 through 30.
-# #
-# # If divisible by both 3 and 5 -> FizzBuzz
-# # If divisible only by 3       -> Fizz
-# # If divisible only by 5       -> Buzz
-# # Otherwise print the number.
-# #
-# # Hint:
-# # Check the most specific condition first.
+# ============================================================
+# BONUS Task 13 — FizzBuzz
+# ============================================================
+# Print numbers 1 through 30.
+#
+# If divisible by both 3 and 5 -> FizzBuzz
+# If divisible only by 3       -> Fizz
+# If divisible only by 5       -> Buzz
+# Otherwise print the number.
+#
+# Hint:
+# Check the most specific condition first.
 
-# # Write your code below:
-# print("Task 13 — FizzBuzz")
+# Write your code below:
+print("Task 13 — FizzBuzz")
 
-# for number in range(1, 31):
-#     if number % 3 == 0 and number % 5 == 0:
-#         print("FizzBuzz")
-#     elif number % 3 == 0:
-#         print("Fizz")
-#     elif number % 5 == 0:
-#         print("Buzz")
-#     else:
-#         print(number)
+for number in range(1, 31):
+    if number % 3 == 0 and number % 5 == 0:
+        print("FizzBuzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
 
-# print()
+print()
 
-# # ============================================================
-# # BONUS Task 14 — Limited login attempts
-# # ============================================================
-# # Give the user at most 3 attempts to enter the PIN.
-# #
-# # Use:
-# #   for
-# #   range()
-# #   break
-# #
-# # Correct PIN:
-# #   Access granted
-# #
-# # Three wrong attempts:
-# #   Access denied
-# #
-# # Do NOT use a while loop.
+# ============================================================
+# BONUS Task 14 — Limited login attempts
+# ============================================================
+# Give the user at most 3 attempts to enter the PIN.
+#
+# Use:
+#   for
+#   range()
+#   break
+#
+# Correct PIN:
+#   Access granted
+#
+# Three wrong attempts:
+#   Access denied
+#
+# Do NOT use a while loop.
 
-# # Write your code below:
-# print("Task 14 — Limited login attempts")
+# Write your code below:
+print("Task 14 — Limited login attempts")
 
-# correct_pin: str = "4821"
-# access_grant: bool = False
+correct_pin: str = "4821"
+access_grant: bool = False
 
-# for attempt in range(3):
-#     pin_input: str = input(f"Enter PIN (attempt {attempt + 1}/3): ")
-#     if pin_input == correct_pin:
-#         access_grant = True
-#         print("Access granted")
-#         break
-# if not access_grant:
-#     print("Access denied")
+for attempt in range(3):
+    pin_input: str = input(f"Enter PIN (attempt {attempt + 1}/3): ")
+    if pin_input == correct_pin:
+        access_grant = True
+        print("Access granted")
+        break
+if not access_grant:
+    print("Access denied")
 
-# print()
+print()
 
 # ============================================================
 # EXTRA Task 15 — Largest of three numbers
