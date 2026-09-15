@@ -861,3 +861,428 @@ for row in range(1, 6):
     print()
 
 print()
+
+# ============================================================
+# EXTRA Task 25 — Second largest value
+# ============================================================
+print("EXTRA Task 25 — Second largest value")
+numbers: List[int] = [12, 7, 19, 3, 19, 14, 8]
+
+# Find the second largest DISTINCT value.
+#
+# Expected:
+# Second largest: 14
+#
+# Do NOT use:
+#   sorted()
+#   max()
+#
+# Hint:
+# Keep track of:
+#   largest
+#   second_largest
+#
+# Be careful with duplicate values.
+
+# Write your code below:
+largest: int = numbers[0]
+second_largest: int = float('-inf')  # type: ignore
+for num in numbers:
+    if num > largest:
+        second_largest = largest
+        largest = num
+    elif num < largest and num > second_largest:
+        second_largest = num
+
+print(f"Second largest: {second_largest}")
+print()
+# ============================================================
+# EXTRA Task 26 — Count consecutive positives
+# ============================================================
+print("EXTRA Task 26 — Count consecutive positives")
+numbers: List[int] = [2, 5, 7, -1, 3, 4, 8, 9, -2, 6]
+
+# Find the longest sequence of consecutive positive numbers.
+#
+# Sequences:
+# 2, 5, 7       -> length 3
+# 3, 4, 8, 9    -> length 4
+# 6             -> length 1
+#
+# Expected:
+# Longest positive sequence: 4
+#
+# Hint:
+# Use:
+#   current_count
+#   longest_count
+
+# Write your code below:
+current_count: int = 0
+longest_count: int = 0
+
+for num in numbers:
+    if num > 0:
+        current_count += 1
+        if current_count > longest_count:
+            longest_count = current_count
+    else:
+       current_count = 0 
+
+print(f"Longest positive sequence: {longest_count}")
+print()
+
+# ============================================================
+# EXTRA Task 27 — Number frequency
+# ============================================================
+print("EXTRA Task 27 — Number frequency")
+numbers: List[int] = [4, 2, 7, 4, 8, 4, 2, 9, 4, 1]
+
+# Ask the user for a number.
+#
+# Count how many times that number occurs in the list.
+#
+# Example:
+# Input: 4
+# Output:
+# Occurrences: 4
+#
+# Do NOT use:
+#   .count()
+
+# Write your code below:
+target_number: int = int(input("Input: "))
+counter: int = 0
+for num in numbers:
+    if num == target_number:
+        counter += 1
+print("Output:")
+print(f"Occurrences: {counter}")
+print()
+
+# ============================================================
+# EXTRA Task 28 — Simple password checker
+# ============================================================
+print("EXTRA Task 28 — Simple password checker")
+password: str = input("Enter password: ")
+
+# A valid password must:
+#   contain at least 8 characters
+#   contain at least one digit
+#   contain at least one uppercase English letter
+#
+# Print:
+#   Valid password
+# or
+#   Invalid password
+#
+# Do NOT use:
+#   any()
+#
+# Hint:
+# You can iterate over the password.
+#
+# Useful strings:
+digits: str = "0123456789"
+uppercase: str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+# Write your code below:
+has_digit: bool = False
+has_uppercase: bool = False
+
+for char in password:
+    if char in digits:
+        has_digit = True
+    if char in uppercase:
+        has_uppercase = True
+
+if len(password) >= 8 and has_digit and has_uppercase:
+    print("Valid password")
+else:
+    print("Invalid password")
+
+print()
+
+# ============================================================
+# EXTRA Task 29 — Local maximum
+# ============================================================
+print("EXTRA Task 29 — Local maximum")
+values: List[int] = [3, 7, 4, 8, 5, 9, 2, 6, 1]
+
+# A value is a local maximum if it is greater than
+# both the value before it and the value after it.
+#
+# Example:
+# 3, 7, 4
+#    ^
+# 7 is a local maximum.
+#
+# Find and print all local maxima.
+#
+# Do not check the first or last element.
+#
+# Expected:
+# 7
+# 8
+# 9
+# 6
+#
+# Hint:
+# Use indexes:
+# values[i - 1]
+# values[i]
+# values[i + 1]
+
+# Write your code below:
+for i in range(len(values) - 1):
+    if values[i] > values[i + 1] and values[i] > values[i - 1]:
+        print(values[i])
+
+print()
+
+# ============================================================
+# EXTRA Task 30 — Pair with target sum
+# ============================================================
+print("EXTRA Task 30 — Pair with target sum")
+numbers: List[int] = [2, 4, 7, 11, 15, 3]
+target: int = 10
+
+# Find two DIFFERENT elements whose sum is equal to target.
+#
+# Expected:
+# 7 + 3 = 10
+#
+# Required:
+# Use nested for loops.
+#
+# Stop when the first valid pair is found.
+#
+# Do NOT use:
+#   set()
+#
+# Hint:
+#
+# for i in range(...):
+#     for j in range(...):
+
+# Write your code below:
+found: bool = False
+for i in range(len(numbers)):
+    for j in range(i + 1, len(numbers)):
+        if numbers[i] + numbers[j] == target:
+            print(f"{numbers[i]} + {numbers[j]} = {numbers[i] + numbers[j]}")
+            found = True
+            break
+    if found:
+        break
+
+print()
+# ============================================================
+# EXTRA Task 31 — Grade distribution
+# ============================================================
+print("EXTRA Task 31 — Grade distribution")
+scores: List[int] = [95, 82, 67, 73, 58, 91, 49, 88, 76, 100, 61]
+
+# Count how many students received:
+#
+# A    -> 90–100
+# B    -> 75–89
+# C    -> 60–74
+# Fail -> below 60
+#
+# Print:
+# A: ...
+# B: ...
+# C: ...
+# Fail: ...
+#
+# Then determine which category contains the most students.
+#
+# Example:
+# Most common: B
+
+# Write your code below:
+scores_a_count: int = 0
+scores_b_count: int = 0
+scores_c_count: int = 0
+fail_count: int = 0
+for score in scores:
+    if 90 <= score <= 100:
+        scores_a_count += 1
+    elif 75 <= score <= 89:
+        scores_b_count += 1
+    elif 60 <= score <= 74:
+        scores_c_count += 1
+    else:
+        fail_count += 1
+
+print(f"A: {scores_a_count}")
+print(f"B: {scores_b_count}")
+print(f"C: {scores_c_count}")
+print(f"Fail: {fail_count}")
+
+most_common: str = "A"
+max_count: int = scores_a_count
+
+if scores_b_count > max_count:
+    most_common = "B"
+    max_count = scores_b_count
+if scores_c_count > max_count:
+    most_common = "C"
+    max_count = scores_c_count
+if fail_count > max_count:
+    most_common = "Fail"
+
+print(f"Most common: {most_common}")
+
+print()
+
+# ============================================================
+# EXTRA Task 32 — Find duplicate values
+# ============================================================
+print("EXTRA Task 32 — Find duplicate values")
+numbers: List[int] = [4, 7, 2, 4, 9, 7, 5, 2]
+
+# Print every value that appears more than once.
+#
+# Expected:
+# 4
+# 7
+# 2
+#
+# Do not print the same duplicate more than once.
+#
+# For this task, try solving it with nested loops.
+#
+# Do NOT use:
+#   set()
+#   .count()
+
+is_dublicate: bool = False
+# Write your code below:
+for i in range(len(numbers)):
+    for j in range(i):
+        if numbers[i] == numbers[j]:
+            is_dublicate = True
+            break
+    if is_dublicate:
+        print(numbers[i])
+        is_dublicate = False
+print()
+
+# ============================================================
+# EXTRA Task 33 — Closest number to target
+# ============================================================
+print("EXTRA Task 33 — Closest number to target")
+numbers: List[int] = [5, 17, 23, 41, 8, 31]
+target: int = 20
+
+# Find the number closest to the target.
+#
+# Expected:
+# Closest: 17
+#
+# You may use:
+# abs()
+#
+# Do NOT use:
+# min()
+
+# Write your code below:
+value: int = numbers[0]
+for number in numbers:
+    if number < value:
+        value = number
+print(f"Closest: {value}")
+print()
+
+# ============================================================
+# EXTRA Task 34 — Detect first repeated value
+# ============================================================
+print("EXTRA Task 34 — Detect first repeated value")
+numbers: List[int] = [5, 3, 8, 2, 3, 9, 5]
+
+# Find the first value that appears for the second time.
+#
+# Reading from left to right:
+#
+# 5 -> first time
+# 3 -> first time
+# 8 -> first time
+# 2 -> first time
+# 3 -> repeated
+#
+# Expected:
+# First repeated: 3
+#
+# Stop searching immediately after finding it.
+#
+# Required:
+# Use break.
+
+# Write your code below:
+for i in range(len(numbers)):
+    for j in range(i):
+        if numbers[i] == numbers[j]:
+            print(f"{numbers[i]} -> repeated")
+            print(f"First repeated: {numbers[i]}")
+            break
+    else:
+        print(f"{numbers[i]} -> first time")
+        continue
+    break
+
+print()
+
+
+# ============================================================
+# EXTRA Task 35 — Prime numbers from 2 to 100
+# ============================================================
+# Print every prime number from 2 through 100.
+#
+# Expected beginning:
+# 2
+# 3
+# 5
+# 7
+# 11
+# ...
+#
+# Required:
+# Use nested for loops.
+#
+# Hint:
+# For each number, test whether another number divides it.
+#
+# Do NOT use external libraries.
+print("EXTRA Task 35 — Prime numbers from 2 to 100")
+# Write your code below:
+for number in range(2, 101):
+    is_prime: bool = True
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(number)
+print()
+# ============================================================
+# EXTRA Task 36 — Number triangle
+# ============================================================
+# Print:
+#
+# 1
+# 1 2
+# 1 2 3
+# 1 2 3 4
+# 1 2 3 4 5
+#
+# Required:
+# Use nested for loops.
+print("EXTRA Task 36 — Number triangle")
+for i in range(1, 6):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
+print()
+# Write your code below:
