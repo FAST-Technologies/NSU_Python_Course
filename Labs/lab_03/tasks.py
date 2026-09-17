@@ -928,7 +928,7 @@ for num in numbers:
         if current_count > longest_count:
             longest_count = current_count
     else:
-       current_count = 0 
+        current_count = 0 
 
 print(f"Longest positive sequence: {longest_count}")
 print()

@@ -1,10 +1,12 @@
 """Defining and calling functions."""
 
 def greet(name):
+    """Return greeting."""
     print(f"Hello, {name}")
 
 
 def rectangle_area(width, height):
+    """Return area."""
     area = width * height
     return area
 

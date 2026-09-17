@@ -2,6 +2,7 @@
 
 
 def divide_total(total, count):
+    """Return average."""
     if count == 0:
         return None
 

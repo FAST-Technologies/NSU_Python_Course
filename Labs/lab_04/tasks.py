@@ -168,7 +168,7 @@ for number in numbers:
         flag = True
         break
 
-if flag != True:
+if flag is not True:
     print("All values are even")
 
 print()
@@ -194,9 +194,9 @@ print()
 # Write your code below:
 print("Task 6 — Multiplication table with nested loops")
 
-for row in range(1, 6):
-    for col in range(1, 6):
-        print(row * col, end=" ")
+for rows in range(1, 6):
+    for cols in range(1, 6):
+        print(rows * cols, end=" ")
     print()
 print()
 
@@ -318,7 +318,6 @@ def is_even(number: int) -> bool:
     """Return True if number is even, False otherwise."""
     return number % 2 == 0
 
-
 print(f"is_even(4): {is_even(4)}")
 print(f"is_even(7): {is_even(7)}")
 print(f"is_even(0): {is_even(0)}")
@@ -381,9 +380,9 @@ def rectangle_area(width: float, height: float) -> float:
     """Return the area of the rectangle."""
     return width * height
 
-width: float = 5
-height: float = 4
-area: float = rectangle_area(width, height)
+widths: float = 5
+heights: float = 4
+area: float = rectangle_area(widths, heights)
 print(f"Area of rectangle: {area}")
 area *= 2
 print(f"Area of rectangle  * 2: {area}")
@@ -527,11 +526,11 @@ secret_number: int = 37
 attempts: int = 0
 
 while True:
-    guess: int = int(input(f"Enter your guess (attempt {attempts + 1}/inf): "))
+    guess_num: int = int(input(f"Enter your guess (attempt {attempts + 1}/inf): "))
     attempts += 1
-    if guess < secret_number:
+    if guess_num < secret_number:
         print("Too low")
-    elif guess > secret_number:
+    elif guess_num > secret_number:
         print("Too high")
     else:
         print("Correct")
