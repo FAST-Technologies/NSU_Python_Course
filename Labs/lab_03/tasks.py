@@ -891,7 +891,7 @@ for num in numbers:
     if num > largest:
         second_largest = largest
         largest = num
-    elif num < largest and num > second_largest:
+    elif second_largest < num < largest:
         second_largest = num
 
 print(f"Second largest: {second_largest}")

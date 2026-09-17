@@ -7,7 +7,7 @@ Tasks 14–15 are optional bonus tasks.
 
 Use only concepts covered in Lecture 04 and earlier lectures.
 """
-from typing import List, Dict, Tuple, Optional
+from typing import List, Tuple, Optional
 
 # ============================================================
 # Task 1 — Countdown with while
