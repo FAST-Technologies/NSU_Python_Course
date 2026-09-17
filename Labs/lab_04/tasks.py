@@ -1249,7 +1249,7 @@ while True:
         print(f"The result of operation {operation} between values {num_1} and {num_2} is {final_result}")
 
     cont: str = input("Continue? yes/no: ").strip().lower()
-    while cont != "yes" and cont != "no":
+    while cont not in ('yes', 'no'):
         cont = input("The cont is wrong! Retype the cont (yes/no): ").strip().lower()
     if cont == "no":
         break
