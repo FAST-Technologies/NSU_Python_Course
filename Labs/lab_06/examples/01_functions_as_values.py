@@ -2,6 +2,7 @@
 
 
 def square(number):
+    """Something."""
     return number ** 2
 
 
@@ -14,6 +15,7 @@ print(operation is square)
 
 
 def apply(function, value):
+    """Something."""
     return function(value)
 
 

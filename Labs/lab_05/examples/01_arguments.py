@@ -2,6 +2,7 @@
 
 
 def greet(name, message="Hello"):
+    """Something."""
     return f"{message}, {name}"
 
 
@@ -11,6 +12,7 @@ print(greet(name="Boris", message="Good morning"))
 
 
 def power(base, exponent):
+    """Something."""
     return base ** exponent
 
 

@@ -2,6 +2,7 @@
 
 
 def countdown(n):
+    """Something."""
     if n == 0:
         print("Go!")
         return
@@ -14,6 +15,7 @@ countdown(3)
 
 
 def sum_to(n):
+    """Something."""
     if n == 0:
         return 0
 

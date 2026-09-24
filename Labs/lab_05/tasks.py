@@ -1032,12 +1032,14 @@ print("Task 26 — Temperature converter")
 
 def convert_temperature(value: float, unit: str = "C") -> Optional[float]:
     """Function that converts Celsius to Fahrenheit or converts Fahrenheit to Celsius."""
+    result: Optional[float]
     if unit == "C":
-        return value * 9 / 5 + 32
+        result = value * 9 / 5 + 32
     elif unit == "F":
-        return (value - 32) * 5 / 9
+        result = (value - 32) * 5 / 9
     else:
-        return None
+        result = None
+    return result
 
 print(f"convert_temperature(0): {convert_temperature(0)}")
 print(f"convert_temperature(100): {convert_temperature(100)}")

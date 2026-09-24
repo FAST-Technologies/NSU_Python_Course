@@ -4,6 +4,7 @@ COURSE = "Python"
 
 
 def show_course():
+    """Something."""
     level = "Master's"
     print(COURSE)
     print(level)
