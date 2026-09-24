@@ -7,6 +7,7 @@ Tasks 13–14 are optional bonus tasks.
 
 Use only concepts covered in Lecture 06 and earlier lectures.
 """
+from typing import Callable, List, Any, Tuple, Dict
 
 # ============================================================
 # Task 1 — Functions as values
@@ -34,7 +35,18 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # would call the function immediately.
 
 # Write your code below:
+print("Task 1 — Functions as values")
 
+def square(number: float) -> float:
+    """Function that returns a square of number."""
+    return number ** 2
+
+operation: Callable[[float], float] = square
+print(f"square(5) = {square(5)}")
+print(f"operation(5) = {operation(5)}")
+print(f"operation is square: {operation is square}")
+
+print()
 
 # ============================================================
 # Task 2 — Passing a function as an argument
@@ -57,7 +69,24 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # Pass the function names WITHOUT parentheses.
 
 # Write your code below:
+print("Task 2 — Passing a function as an argument")
 
+def double(number: float) -> float:
+    """Function that returns a double number."""
+    return number * 2
+
+def triple(number: float) -> float:
+    """Function that returns a triple number."""
+    return number * 3
+
+def apply(operation: Callable[[float], float], value: float) -> float:
+    """Function that calls double or triple operation and returns the result."""
+    return operation(value)
+
+print(f"apply(double, 5) = {apply(double, 5)}")
+print(f"apply(triple, 5) = {apply(triple, 5)}")
+
+print()
 
 # ============================================================
 # Task 3 — Higher-order function
@@ -84,7 +113,18 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # [1, 4, 9, 16]
 
 # Write your code below:
+print("Task 3 — Higher-order function")
 
+def transform(values: List[float], operation: Callable[[float], float]) -> List[float]:
+    """Function that transform a value using operations."""
+    result: List[float] = []
+    for value in values:
+        result.append(operation(value))
+    return result
+
+print(f"transform([1, 2, 3, 4], square) = {transform([1, 2, 3, 4], square)}")
+
+print()
 
 # ============================================================
 # Task 4 — Lambda expressions
@@ -104,7 +144,18 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # Each lambda must contain only one expression.
 
 # Write your code below:
+print("Task 4 — Lambda expressions")
 
+double_lambda = lambda x: x * 2
+add_lambda = lambda x, y: x + y
+is_even_lambda = lambda x: x % 2 == 0
+
+print(f"double_lambda(5) = {double_lambda(5)}")
+print(f"add_lambda(3, 4) = {add_lambda(3, 4)}")
+print(f"is_even_lambda(8) = {is_even_lambda(8)}")
+print(f"is_even_lambda(7) = {is_even_lambda(7)}")
+
+print()
 
 # ============================================================
 # Task 5 — sorted() versus list.sort()
@@ -138,7 +189,21 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # What does list.sort() return?
 
 # Write your code below:
+print("Task 5 — sorted() versus list.sort()")
 
+numbers_5: List[int] = [8, 3, 10, 1, 6]
+
+# Part A: sorted() creates a NEW list
+ordered: List[int] = sorted(numbers_5)
+print(f"Original numbers: {numbers_5}")
+print(f"New ordered list: {ordered}")
+
+# Part B: list.sort() modifies the list IN PLACE
+result_sort: Any = numbers_5.sort()
+print(f"Numbers after .sort(): {numbers_5}")
+print(f"Result of .sort() assignment: {result_sort}")
+
+print()
 
 # ============================================================
 # Task 6 — Descending order
@@ -159,7 +224,15 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # The original scores list should remain unchanged.
 
 # Write your code below:
+print("Task 6 — Descending order")
 
+scores_6: List[int] = [82, 95, 73, 88, 61]
+
+high_to_low: List[int] = sorted(scores_6, reverse=True)
+print(f"high_to_low: {high_to_low}")
+print(f"Original scores (unchanged): {scores_6}")
+
+print()
 
 # ============================================================
 # Task 7 — Sorting with key
@@ -184,7 +257,17 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # Do not manually calculate the lengths.
 
 # Write your code below:
+print("Task 7 — Sorting with key")
 
+words: List[str] = ["pear", "watermelon", "fig", "banana", "kiwi"]
+
+shortest_first: List[str] = sorted(words, key=len)
+longest_first: List[str] = sorted(words, key=len, reverse=True)
+
+print(f"shortest_first: {shortest_first}")
+print(f"longest_first: {longest_first}")
+
+print()
 
 # ============================================================
 # Task 8 — Case-insensitive sorting
@@ -213,7 +296,14 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # The original capitalization must stay unchanged.
 
 # Write your code below:
+print("Task 8 — Case-insensitive sorting")
 
+cities: List[str] = ["berlin", "Algiers", "cairo", "Amsterdam", "zurich"]
+
+ordered_cities: List[str] = sorted(cities, key=str.lower)
+print(f"ordered_cities: {ordered_cities}")
+
+print()
 
 # ============================================================
 # Task 9 — Sorting tuples with lambda
@@ -239,6 +329,23 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # ("Boris", 95)
 
 # Write your code below:
+print("Task 9 — Sorting tuples with lambda")
+
+students_9: List[Tuple[str, int]] = [
+    ("Anna", 82),
+    ("Boris", 95),
+    ("Mira", 88),
+    ("Daniel", 73)
+]
+
+sorted_by_score: List[Tuple[str, int]] = sorted(
+    students_9, 
+    key=lambda student: student[1], 
+    reverse=True
+)
+print(f"sorted_by_score: {sorted_by_score}")
+
+print()
 
 
 # ============================================================
@@ -256,7 +363,14 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # [70, 82, 91, 60]
 
 # Write your code below:
+print("Task 10 — Filtering values")
 
+scores_10: List[int] = [45, 70, 82, 39, 91, 60, 58]
+
+passing_scores: List[int] = list(filter(lambda x: x >= 60, scores_10))
+print(f"passing_scores: {passing_scores}")
+
+print()
 
 # ============================================================
 # Task 11 — Transforming values with map()
@@ -277,7 +391,14 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # representation differences.
 
 # Write your code below:
+print("Task 11 — Transforming values with map()")
 
+prices: List[float] = [100, 250, 80, 40]
+
+increased_prices: List[float] = list(map(lambda x: x * 1.10, prices))
+print(f"increased_prices: {increased_prices}")
+
+print()
 
 # ============================================================
 # Task 12 — Filter, sort, and map together
@@ -309,7 +430,28 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # and map transformation.
 
 # Write your code below:
+print("Task 12 — Filter, sort, and map together")
 
+students_12: List[Dict[str, Any]] = [
+    {"name": "Anna", "score": 82},
+    {"name": "Boris", "score": 55},
+    {"name": "Mira", "score": 91},
+    {"name": "Daniel", "score": 67},
+    {"name": "Sara", "score": 48}
+]
+
+# Step 1: Filter
+passed_students = list(filter(lambda s: s["score"] >= 60, students_12))
+
+# Step 2: Sort
+sorted_passed = sorted(passed_students, key=lambda s: s["score"], reverse=True)
+
+# Step 3: Map
+final_names: List[str] = list(map(lambda s: s["name"], sorted_passed))
+
+print(f"final_names: {final_names}")
+
+print()
 
 # ============================================================
 # Task 13 — BONUS: Sort records by multiple ideas
@@ -338,7 +480,22 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # Use lambda expressions as sorting keys.
 
 # Write your code below:
+print("Task 13 — BONUS: Sort records by multiple ideas")
 
+products: List[Dict[str, Any]] = [
+    {"name": "Keyboard", "price": 70},
+    {"name": "Mouse", "price": 25},
+    {"name": "Monitor", "price": 220},
+    {"name": "USB Cable", "price": 10}
+]
+
+by_price: List[Dict[str, Any]] = sorted(products, key=lambda p: p["price"])
+by_name_length: List[Dict[str, Any]] = sorted(products, key=lambda p: len(p["name"]))
+
+print(f"by_price: {by_price}")
+print(f"by_name_length: {by_name_length}")
+
+print()
 
 # ============================================================
 # Task 14 — BONUS: Student ranking pipeline
@@ -377,3 +534,26 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 # Print ranking.
 
 # Write your code below:
+print("Task 14 — BONUS: Student ranking pipeline")
+
+students_14: List[Tuple[str, int]] = [
+    ("Anna", 82),
+    ("Boris", 55),
+    ("Mira", 91),
+    ("Daniel", 67),
+    ("Sara", 48),
+    ("Omar", 76)
+]
+
+# 1. filter()
+passed_14 = filter(lambda s: s[1] >= 60, students_14)
+
+# 2. sorted()
+sorted_14 = sorted(passed_14, key=lambda s: s[1], reverse=True)
+
+# 3. map()
+ranking: List[str] = list(map(lambda s: f"{s[0]}: {s[1]}", sorted_14))
+
+print(f"ranking: {ranking}")
+
+print()
