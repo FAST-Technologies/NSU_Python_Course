@@ -545,15 +545,280 @@ students_14: List[Tuple[str, int]] = [
     ("Omar", 76)
 ]
 
-# 1. filter()
 passed_14 = filter(lambda s: s[1] >= 60, students_14)
-
-# 2. sorted()
 sorted_14 = sorted(passed_14, key=lambda s: s[1], reverse=True)
-
-# 3. map()
 ranking: List[str] = list(map(lambda s: f"{s[0]}: {s[1]}", sorted_14))
 
 print(f"ranking: {ranking}")
 
 print()
+
+
+
+# ============================================================
+# Task 15 — Sort numbers by distance from zero
+# ============================================================
+# Start with:
+#
+# numbers = [-10, 3, -2, 8, -7, 1]
+#
+# Sort the numbers by their absolute value.
+#
+# Use:
+#   sorted()
+#   key=abs
+#
+# Expected:
+# [1, -2, 3, -7, 8, -10]
+#
+# Do not change the original list.
+
+# Write your code below:
+
+
+# ============================================================
+# Task 16 — Sort words alphabetically by last letter
+# ============================================================
+# Start with:
+#
+# words = ["apple", "banana", "kiwi", "orange", "pear"]
+#
+# Sort the words according to their LAST character.
+#
+# Use:
+#
+#   sorted()
+#   key=lambda ...
+#
+# Hint:
+# word[-1]
+#
+# Store the result in:
+#
+#   ordered_words
+
+# Write your code below:
+
+
+# ============================================================
+# Task 17 — Filter negative numbers
+# ============================================================
+# Start with:
+#
+# numbers = [5, -3, 8, -1, 0, 12, -7, 4]
+#
+# Use filter() and a lambda to keep only negative numbers.
+#
+# Convert the result to a list.
+#
+# Expected:
+# [-3, -1, -7]
+
+# Write your code below:
+
+
+# ============================================================
+# Task 18 — Filter words by length
+# ============================================================
+# Start with:
+#
+# words = [
+#     "cat",
+#     "python",
+#     "AI",
+#     "computer",
+#     "data",
+#     "algorithm"
+# ]
+#
+# Use filter() to keep only words with at least 5 characters.
+#
+# Use a lambda.
+#
+# Expected:
+# ["python", "computer", "algorithm"]
+
+# Write your code below:
+
+
+# ============================================================
+# Task 19 — Convert temperatures with map()
+# ============================================================
+# Start with:
+#
+# celsius = [0, 10, 20, 30, 40]
+#
+# Convert every temperature from Celsius to Fahrenheit.
+#
+# Formula:
+#
+# Fahrenheit = Celsius * 9 / 5 + 32
+#
+# Use:
+#
+#   map()
+#   lambda
+#
+# Expected:
+# [32.0, 50.0, 68.0, 86.0, 104.0]
+
+# Write your code below:
+
+
+# ============================================================
+# Task 20 — Extract dictionary values with map()
+# ============================================================
+# Start with:
+#
+# students = [
+#     {"name": "Anna", "age": 22},
+#     {"name": "Boris", "age": 24},
+#     {"name": "Mira", "age": 21},
+#     {"name": "Daniel", "age": 25}
+# ]
+#
+# Use map() and a lambda to create a list containing
+# only the student names.
+#
+# Expected:
+# ["Anna", "Boris", "Mira", "Daniel"]
+
+# Write your code below:
+
+
+# ============================================================
+# Task 21 — Sort students alphabetically
+# ============================================================
+# Start with:
+#
+# students = [
+#     ("Mira", 91),
+#     ("anna", 82),
+#     ("Daniel", 67),
+#     ("boris", 55)
+# ]
+#
+# Sort the students alphabetically by name.
+#
+# Ignore uppercase/lowercase differences.
+#
+# Use:
+#
+#   sorted()
+#   key=lambda ...
+#
+# Hint:
+# student[0].lower()
+#
+# Expected order:
+# anna
+# boris
+# Daniel
+# Mira
+
+# Write your code below:
+
+
+# ============================================================
+# Task 22 — Sort by multiple values
+# ============================================================
+# Start with:
+#
+# students = [
+#     ("Anna", 80),
+#     ("Boris", 90),
+#     ("Mira", 80),
+#     ("Daniel", 90),
+#     ("Sara", 70)
+# ]
+#
+# Sort students:
+#
+# 1. by score from highest to lowest;
+# 2. if two students have the same score,
+#    sort them alphabetically by name.
+#
+# Expected:
+#
+# [
+#     ("Boris", 90),
+#     ("Daniel", 90),
+#     ("Anna", 80),
+#     ("Mira", 80),
+#     ("Sara", 70)
+# ]
+#
+# Use sorted() and a lambda.
+#
+# Hint:
+# A tuple can be used as a sorting key:
+#
+#   key=lambda student: (...)
+#
+# Think about how to make the score sort in descending
+# order without using reverse=True for the name.
+
+# Write your code below:
+
+
+# ============================================================
+# Task 23 — Filter and transform numbers
+# ============================================================
+# Start with:
+#
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#
+# Step 1:
+# Use filter() to keep only even numbers.
+#
+# Step 2:
+# Use map() to square the remaining numbers.
+#
+# Expected:
+# [4, 16, 36, 64, 100]
+#
+# Use lambda expressions.
+
+# Write your code below:
+
+
+# ============================================================
+# Task 24 — Product discount system
+# ============================================================
+# Start with:
+#
+# products = [
+#     {"name": "Laptop", "price": 1200},
+#     {"name": "Mouse", "price": 25},
+#     {"name": "Keyboard", "price": 80},
+#     {"name": "Monitor", "price": 300},
+#     {"name": "USB Cable", "price": 10}
+# ]
+#
+# Step 1:
+# Keep only products costing at least 50.
+#
+# Step 2:
+# Apply a 20% discount to their prices.
+#
+# Step 3:
+# Sort the discounted products from cheapest
+# to most expensive.
+#
+# The result should contain dictionaries like:
+#
+# {
+#     "name": "Keyboard",
+#     "price": 64.0
+# }
+#
+# Use:
+#
+#   filter()
+#   map()
+#   sorted()
+#   lambda
+#
+# Do not modify the original products list.
+
+# Write your code below:
